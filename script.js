@@ -4,16 +4,16 @@ const stories = [
     { id: 3, statusId: "In Progress", title: "Story 3", description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores." },
     { id: 4, statusId: "Done", title: "Story 4", description: "Et harum quidem rerum facilis est et expedita distinctio." },
     { id: 5, statusId: "Done", title: "Story 5", description: "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus." }
-  ];
-  const kanbanBoard = {
+];
+const kanbanBoard = {
     "To Do": [],
     "In Progress": [],
     "Done": []
-  };
-  stories.forEach(story => kanbanBoard[story.statusId].push(story));
+};
+stories.forEach(story => kanbanBoard[story.statusId].push(story));
 
 
-  function renderBoard() {
+function renderBoard() {
 
     const toDoColumn = document.getElementById("to-do-column");
     const analysisColumn = document.getElementById("in-analysis-column");
@@ -26,8 +26,8 @@ const stories = [
 
     // Remove existing stories from columns
     toDoColumn.innerHTML = `<div class="column-header">To Do</div>`;
-    analysisColumn.innerHTML=`<div class="column-header">In Analysis</div>`;
-    readyForDevColumn.innerHTML=`<div class="column-header">Ready</div>`;
+    analysisColumn.innerHTML = `<div class="column-header">In Analysis</div>`;
+    readyForDevColumn.innerHTML = `<div class="column-header">Ready</div>`;
     inDevColumn.innerHTML = `<div class="column-header">In Dev</div>`;
     inQaColumn.innerHTML = `<div class="column-header">In QA</div>`;
     signOffColumn.innerHTML = `<div class="column-header">Sign off</div>`;
@@ -37,48 +37,48 @@ const stories = [
 
     // Render stories as cards in columns
     kanbanBoard["To Do"].forEach(story => {
-      const card = document.createElement("div");
-      card.classList.add("story");
-      card.innerHTML = `
+        const card = document.createElement("div");
+        card.classList.add("story");
+        card.innerHTML = `
     <div class="story-id">#${story.id}</div>
     <div class="story-title">${story.title}</div>
     <div class="story-description">${story.description}</div>
     <div class="story-statusId">${story.statusId}</div>
   `;
-      toDoColumn.appendChild(card);
+        toDoColumn.appendChild(card);
     });
 
     kanbanBoard["In Progress"].forEach(story => {
-      const card = document.createElement("div");
-      card.classList.add("story");
-      card.innerHTML = `
+        const card = document.createElement("div");
+        card.classList.add("story");
+        card.innerHTML = `
     <div class="story-id">#${story.id}</div>
     <div class="story-title">${story.title}</div>
     <div class="story-description">${story.description}</div>
     <div class="story-statusId">${story.statusId}</div>
   `;
-      inDevColumn.appendChild(card);
+        inDevColumn.appendChild(card);
     });
 
     kanbanBoard["Done"].forEach(story => {
-      const card = document.createElement("div");
-      card.classList.add("story");
-      card.innerHTML = `
+        const card = document.createElement("div");
+        card.classList.add("story");
+        card.innerHTML = `
     <div class="story-id">#${story.id}</div>
     <div class="story-title">${story.title}</div>
     <div class="story-description">${story.description}</div>
     <div class="story-statusId">${story.statusId}</div>
   `;
-      doneColumn.appendChild(card);
+        doneColumn.appendChild(card);
     });
 
-  }
-  function progressStory(storyId) {
+}
+function progressStory(storyId) {
     // Find the story in the "To Do" column
     const story = kanbanBoard["To Do"].find(story => story.id === storyId);
     if (!story) {
-      console.error(`Story with ID ${storyId} not found in "To Do" column`);
-      return;
+        console.error(`Story with ID ${storyId} not found in "To Do" column`);
+        return;
     }
 
     // Move the story to the "In Progress" column
@@ -87,19 +87,18 @@ const stories = [
 
     // Re-render the board to update the UI
     renderBoard();
-  }
-  function moveStory(storyId){
+}
+function moveStory(storyId) {
 
-  }
+}
 
-  renderBoard();
+renderBoard();
 
-  stories.forEach(story => console.log(story));
+stories.forEach(story => console.log(story));
 
-  function doIteration(daysInIteration){
+function doIteration(daysInIteration) {
     for (let i = 0; i < daysInIteration; i++) {
+  
+    }
 
-      }
-      
-  }
- 
+}
