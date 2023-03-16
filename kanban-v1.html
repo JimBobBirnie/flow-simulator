@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Kanban Board</title>
+  <style>
+    /* Define styles for the board */
+    .board {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      width: 80%;
+
+      background-color: #f2f2f2;
+      padding: 10px;
+      box-sizing: border-box;
+      border-radius: 5px;
+    }
+
+    /* Define styles for the columns */
+    .column {
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      width: 30%;
+      padding: 10px;
+      background-color: #f5f5f5;
+      box-sizing: border-box;
+      overflow: auto;
+
+    }
+
+    .column-header {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    /* Define styles for the stories */
+    .story {
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #fff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .story:hover {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .story-id {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #888;
+    }
+
+    .story-title {
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .story-description {
+      font-size: 0.9em;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .story-status {
+      font-style: italic;
+      color: #aaa;
+    }
+
+    /* Define styles for the buttons */
+    .button {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .button:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Kanban Board</h1>
+  <div class="board">
+    <div class="column" id="to-do-column">
+      <div class="column-header">To Do</div>
+    </div>
+    <div class="column" id="in-analysis-column">
+      <div class="column-header">In Analysis</div>
+    </div>
+    <div class="column" id="ready-for-dev-column">
+      <div class="column-header">Ready For Dev</div>
+    </div>
+    <div class="column" id="in-dev-column">
+      <div class="column-header">In Dev</div>
+    </div>
+    <div class="column" id="in-qa-column">
+      <div class="column-header">In QA</div>
+    </div>
+    <div class="column" id="business-sign-off-column">
+      <div class="column-header">Sign off</div>
+    </div>
+    <div class="column" id="ready-for-release-column">
+      <div class="column-header">Ready for Release</div>
+    </div>
+    <div class="column" id="done-column">
+      <div class="column-header">Done</div>
+    </div>
+
+  </div>
+  <script src="script.js"> </script>
